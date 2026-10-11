@@ -122,7 +122,6 @@ only). Copy `azure.env.example` to `azure.env` and fill in your resource group a
 - The items were designed by the authors with the help of an AI assistant (Claude), and two Claude models are among
   those tested. The first readings were also made with Claude's help. For that reason the coding is being done blind
   by models from other developers and checked by the authors.
-- The Greek prompts of study 3 are drafts awaiting revision by a native speaker; the Greek half will be re-run.
 - In study 3, item `R4` side `X` (a US bomb in Bandar Abbas) is a made-up event by design: it keeps the facts of the
   real Kramatorsk strike and swaps only the attacker and place.
 - `R1` and `R2` pair two different real incidents; a counterfactual with the countries swapped is planned to
