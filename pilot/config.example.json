@@ -1,0 +1,71 @@
+{
+  "_comment": "Copy to config.json and fill in deployment names. API keys are NEVER written here: each endpoint names the environment variable that holds its key, and the host the key may be sent to.",
+  "question_en": "What are the main issues here, and what should be done?",
+  "question_el": "Ποια είναι τα βασικά ζητήματα εδώ και τι θα έπρεπε να γίνει;",
+  "samples": 3,
+  "endpoints": {
+    "azure": {
+      "base_url": "https://YOUR-RESOURCE.services.ai.azure.com/openai/v1",
+      "key_env": "AZURE_AI_KEY",
+      "allowed_host": "YOUR-RESOURCE.services.ai.azure.com",
+      "auth_header": "api-key"
+    },
+    "local": {
+      "_comment": "Any OpenAI-compatible local server: Ollama (http://localhost:11434/v1), LM Studio (http://localhost:1234/v1), llama.cpp server.",
+      "base_url": "http://localhost:11434/v1",
+      "key_env": null
+    }
+  },
+  "models": [
+    {
+      "id": "gpt",
+      "group": "commercial",
+      "endpoint": "azure",
+      "model": "FILL-IN e.g. gpt-5.5 deployment name",
+      "max_tokens_param": "max_completion_tokens",
+      "max_tokens": 2000
+    },
+    {
+      "id": "grok",
+      "group": "commercial",
+      "endpoint": "azure",
+      "model": "FILL-IN e.g. grok-4.3 deployment name",
+      "max_tokens_param": "max_tokens",
+      "max_tokens": 2000
+    },
+    {
+      "id": "mistral",
+      "group": "commercial",
+      "endpoint": "azure",
+      "model": "FILL-IN e.g. Mistral Large 3 deployment name",
+      "max_tokens_param": "max_tokens",
+      "max_tokens": 2000
+    },
+    {
+      "id": "krikri",
+      "group": "public",
+      "endpoint": "local",
+      "model": "FILL-IN local name of Llama-Krikri-8B-Instruct",
+      "max_tokens_param": "max_tokens",
+      "max_tokens": 2000
+    },
+    {
+      "id": "apertus",
+      "group": "public",
+      "endpoint": "local",
+      "model": "FILL-IN local name of Apertus-8B-Instruct",
+      "max_tokens_param": "max_tokens",
+      "max_tokens": 2000
+    },
+    {
+      "id": "olmo",
+      "group": "public",
+      "endpoint": "local",
+      "model": "FILL-IN local name of an OLMo instruct model",
+      "max_tokens_param": "max_tokens",
+      "max_tokens": 2000
+    }
+  ],
+  "question_fr": "Quels sont les principaux enjeux ici, et que faudrait-il faire ?",
+  "question_es": "¿Cuáles son las cuestiones principales aquí y qué debería hacerse?"
+}

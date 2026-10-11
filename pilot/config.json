@@ -1,0 +1,174 @@
+{
+  "_comment": "API keys are NEVER written here: each endpoint names the environment variable that holds its key (AZURE_OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY) and the only host the key may be sent to. Azure 'model' = the deployment name in Foundry.",
+  "question_en": "What are the main issues here, and what should be done?",
+  "question_el": "Ποια είναι τα βασικά ζητήματα εδώ και τι θα έπρεπε να γίνει;",
+  "samples": 3,
+  "endpoints": {
+    "azure": {
+      "base_url": "https://YOUR-RESOURCE.openai.azure.com/openai/v1",
+      "key_env": "AZURE_OPENAI_API_KEY",
+      "allowed_host": "YOUR-RESOURCE.openai.azure.com",
+      "auth_header": "api-key"
+    },
+    "local": {
+      "_comment": "Any OpenAI-compatible local server: Ollama (http://localhost:11434/v1), LM Studio (http://localhost:1234/v1), llama.cpp server.",
+      "base_url": "http://localhost:11434/v1",
+      "key_env": null
+    },
+    "anthropic": {
+      "api": "anthropic",
+      "base_url": "https://api.anthropic.com/v1",
+      "key_env": "ANTHROPIC_API_KEY",
+      "allowed_host": "api.anthropic.com",
+      "auth_header": "x-api-key",
+      "headers": {
+        "anthropic-version": "2023-06-01"
+      },
+      "timeout": 600
+    },
+    "google": {
+      "api": "gemini",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta",
+      "key_env": "GEMINI_API_KEY",
+      "allowed_host": "generativelanguage.googleapis.com",
+      "auth_header": "x-goog-api-key",
+      "timeout": 600
+    }
+  },
+  "models": [
+    {
+      "id": "gpt",
+      "group": "commercial",
+      "endpoint": "azure",
+      "model": "gpt-5.5",
+      "max_tokens_param": "max_completion_tokens",
+      "max_tokens": 6000,
+      "developer": "OpenAI (US)"
+    },
+    {
+      "id": "grok",
+      "group": "commercial",
+      "endpoint": "azure",
+      "model": "grok-4.3",
+      "max_tokens_param": "max_completion_tokens",
+      "max_tokens": 2500,
+      "developer": "xAI (US)"
+    },
+    {
+      "id": "mistral",
+      "group": "commercial",
+      "endpoint": "azure",
+      "model": "Mistral-Large-3",
+      "max_tokens_param": "max_tokens",
+      "max_tokens": 4000,
+      "developer": "Mistral AI (France)"
+    },
+    {
+      "id": "astra",
+      "group": "commercial",
+      "developer": "OpenAI (US)",
+      "endpoint": "azure",
+      "model": "gpt-6-astra",
+      "max_tokens_param": "max_completion_tokens",
+      "max_tokens": 12000
+    },
+    {
+      "id": "grok47",
+      "group": "commercial",
+      "developer": "xAI (US)",
+      "endpoint": "azure",
+      "model": "grok-4.7",
+      "max_tokens_param": "max_completion_tokens",
+      "max_tokens": 12000
+    },
+    {
+      "id": "claude",
+      "group": "commercial",
+      "developer": "Anthropic (US)",
+      "endpoint": "anthropic",
+      "model": "claude-fable-5-1",
+      "max_tokens": 16000
+    },
+    {
+      "id": "opus",
+      "group": "commercial",
+      "developer": "Anthropic (US)",
+      "endpoint": "anthropic",
+      "model": "claude-opus-5-5",
+      "max_tokens": 16000
+    },
+    {
+      "id": "gemini",
+      "group": "commercial",
+      "developer": "Google (US)",
+      "endpoint": "google",
+      "model": "gemini-3.8-flash",
+      "max_tokens": 16000
+    },
+    {
+      "id": "deepseek",
+      "group": "commercial",
+      "developer": "DeepSeek (China)",
+      "endpoint": "azure",
+      "model": "DeepSeek-V4-Pro",
+      "max_tokens_param": "max_tokens",
+      "max_tokens": 12000
+    },
+    {
+      "id": "kimi",
+      "group": "commercial",
+      "developer": "Moonshot AI (China)",
+      "endpoint": "azure",
+      "model": "Kimi-K2.6",
+      "max_tokens_param": "max_tokens",
+      "max_tokens": 12000
+    },
+    {
+      "id": "qwen",
+      "group": "commercial",
+      "developer": "Alibaba (China), open weights",
+      "endpoint": "local",
+      "model": "FILL-IN local Ollama name of a Qwen instruct model",
+      "max_tokens": 4000,
+      "max_tokens_param": "max_tokens"
+    },
+    {
+      "id": "llama33",
+      "group": "commercial",
+      "developer": "Meta (US), open weights",
+      "endpoint": "azure",
+      "model": "Llama-3.3-70B-Instruct",
+      "max_tokens_param": "max_tokens",
+      "max_tokens": 2500
+    },
+    {
+      "id": "krikri",
+      "group": "public",
+      "endpoint": "local",
+      "model": "FILL-IN local name of Llama-Krikri-8B-Instruct",
+      "max_tokens_param": "max_tokens",
+      "max_tokens": 2000,
+      "developer": "ILSP, Athena RC (Greece)"
+    },
+    {
+      "id": "apertus",
+      "group": "public",
+      "endpoint": "local",
+      "model": "FILL-IN local name of Apertus-8B-Instruct",
+      "max_tokens_param": "max_tokens",
+      "max_tokens": 2000,
+      "developer": "Swiss AI Initiative"
+    },
+    {
+      "id": "olmo",
+      "group": "public",
+      "endpoint": "local",
+      "model": "FILL-IN local name of an OLMo instruct model",
+      "max_tokens_param": "max_tokens",
+      "max_tokens": 2000,
+      "developer": "Ai2 (US)"
+    }
+  ],
+  "question_fr": "Quels sont les principaux enjeux ici, et que faudrait-il faire ?",
+  "question_es": "¿Cuáles son las cuestiones principales aquí y qué debería hacerse?"
+}
